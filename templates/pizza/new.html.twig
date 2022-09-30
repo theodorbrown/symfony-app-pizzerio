@@ -1,0 +1,12 @@
+{% extends "front-layout.twig" %}
+
+{% block content %}
+
+    <h1 class="">Ajout d'une pizza</h1>
+    {% embed "decorator/_form.html.twig" %}
+        {% block formBody %}
+            {{ form_widget(form) }}
+        {% endblock %}
+    {% endembed %}
+
+{% endblock %}

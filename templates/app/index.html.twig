@@ -1,0 +1,28 @@
+{% extends 'front-layout.twig' %}
+
+{% block content %}
+
+<h2 class="text-center m-1">👨‍🍳 Bienvenue sur Pizzerio's 👨‍🍳</h2>
+<div class="text-center p-2">
+    <span>Une pâte faite maison à l’huile d’olive BIO vierge extra 🌱 confectionnée avec une farine multicéréales riche en fibres 🌾.</span>
+    <span>Notre sauce tomate est sans colorants, sans conservateurs, sans additifs et cuisinée avec des tomates italiennes cueillies en été à maturité 🍅 🌞</span>
+    <span>Notre viande hachée de boeuf, merguez et poulet sont certifiés 100% Origine France 🇫🇷</span>
+    <span>Fraîchement découpés sur place, nos ingrédients sont sélectionnés auprès des meilleurs fournisseurs.</span>
+    <!--Description provenant de https://lapizzadenico.com/ usage dans un contexte privé-->
+</div>
+
+<div id="carousel" class="carousel slide w-50 mt-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/images/pizza-1.jpeg" class="d-block w-100 h-auto rounded">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/pizza-2.jpeg" class="d-block w-100 h-auto rounded">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/pizza-1.jpeg" class="d-block w-100 h-auto rounded">
+        </div>
+    </div>
+</div>
+
+{% endblock %}

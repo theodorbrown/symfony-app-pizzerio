@@ -1,0 +1,32 @@
+{% extends 'front-layout.twig' %}
+
+{% block title %}Pizza index{% endblock %}
+
+{% block content %}
+    <h1>Liste des pizzas</h1>
+    <div class="text-center">
+        <a href="{{ path('pizza_new') }}" class="btn btn-success m-1">Ajouter une pizza</a>
+    </div>
+    <div class="card-group">
+        {% for pizza in pizzas %}
+            <div class="m-3 d-flex justify-content-center">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://fakeimg.pl/200x120/" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{pizza.name}}</h5>
+                        <p class="card-text" style="height: 130px;">{{pizza.content}}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{ pizza.createdAt ? pizza.createdAt|date('Y-m-d H:i:s') : '' }}</li>
+                    </ul>
+                    <div class="card-body align-self-center">
+                        <a href="{{ path('pizza_edit',  {'id':pizza.id }) }}" class="btn btn-light"><i class="fas fa-edit"></i></a>
+                        <a href="{{ path('pizza_delete',  {'id':pizza.id }) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+                <p>Aucunes pizzas enregistrées</p>
+        {% endfor %}
+    </div>
+{% endblock %}

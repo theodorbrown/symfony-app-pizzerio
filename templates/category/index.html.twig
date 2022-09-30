@@ -1,0 +1,27 @@
+{% extends 'front-layout.twig' %}
+
+{% block title %}Pizza index{% endblock %}
+
+{% block content %}
+    <h1>Liste des catégories</h1>
+    <div class="text-center">
+        <a href="{{ path('category_new') }}" class="btn btn-success m-1">Ajouter une catégorie</a>
+    </div>
+    <div class="card-group ">
+        {% for category in categories %}
+            <div class="m-3 d-flex justify-content-center">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body align-self-center" style="height: 60px;">
+                        <h5 class="card-title" style="text-align-last: center;">{{category.name}}</h5>
+                    </div>
+                    <div class="card-body align-self-center">
+                        <a href="{{ path('category_edit',  {'id':category.id }) }}" class="btn btn-light"><i class="fas fa-edit"></i></a>
+                        <a href="{{ path('category_delete',  {'id':category.id }) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+                <p>Aucunes catégories enregistrées</p>
+        {% endfor %}
+    </div>
+{% endblock %}

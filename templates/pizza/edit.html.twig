@@ -1,0 +1,15 @@
+{% extends "front-layout.twig" %}
+
+{% block content %}
+
+    <h2>Edition d'une pizza</h2>
+    {% embed "decorator/_form.html.twig" %}
+        {% block formBody %}
+            {{form_widget(form.name)}}
+            {{form_widget(form.content)}}
+            {{form_widget(form.created_at)}}
+            {{form_widget(form.enabled)}}
+        {% endblock %}
+    {% endembed %}
+
+{% endblock %}
